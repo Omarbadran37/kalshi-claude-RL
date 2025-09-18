@@ -1,0 +1,192 @@
+[
+  {
+    "scenario": "Close Game - Late 4th Quarter",
+    "result": {
+      "timestamp": "2025-09-15T22:44:16.794030",
+      "analysis_duration_seconds": 39.064536,
+      "game_input": {
+        "team_a": "Kansas City Chiefs",
+        "team_b": "Buffalo Bills",
+        "current_score": {
+          "team_a": 21,
+          "team_b": 20
+        },
+        "quarter": 4,
+        "time_remaining": "2:15",
+        "recent_events": [
+          "Chiefs field goal",
+          "Bills timeout",
+          "2-minute warning"
+        ]
+      },
+      "market_data": {
+        "event_ticker": "NFL-Kansas City Chiefs-Buffalo Bills-2025-09-15",
+        "team_a_yes_price": 48.0,
+        "team_a_no_price": 52.0,
+        "team_b_yes_price": 52.0,
+        "team_b_no_price": 48.0,
+        "volume_24h": 15000,
+        "bid_ask_spread": 2.0,
+        "last_trade_price": 47.5
+      },
+      "sports_analysis": {
+        "predicted_winner": "too_close",
+        "win_probability_team_a": 0.5,
+        "win_probability_team_b": 0.5,
+        "confidence": 0.3,
+        "key_factors": [
+          "parsing_error"
+        ],
+        "momentum_assessment": "neutral",
+        "reasoning": "Error parsing analysis: Expecting property name enclosed in double quotes: line 3 column 38 (char 73)"
+      },
+      "trading_recommendation": {
+        "action": "PASS",
+        "target": null,
+        "quantity": 0,
+        "confidence": 0.1,
+        "reasoning": "Multiple factors suggest avoiding this trade: 1) Sports analysis has very low confidence (30%) and missing key factors data 2) Market prices roughly align with 50-50 probability assessment 3) Critical game situation (2:15 left, 1-point difference) creates high uncertainty 4) No significant market inefficiency detected between sports analysis and current prices 5) Error in parsing key factors limits ability to identify genuine edge",
+        "sports_signal_strength": 0.3,
+        "market_edge_detected": false,
+        "risk_assessment": "high"
+      },
+      "system_info": {
+        "version": "1.0.0-mvp",
+        "agents_used": [
+          "SportsAgent",
+          "TradeAgent"
+        ],
+        "api_integration": "mock"
+      }
+    }
+  },
+  {
+    "scenario": "Blowout - Early Lead",
+    "result": {
+      "timestamp": "2025-09-15T22:44:55.858986",
+      "analysis_duration_seconds": 37.471778,
+      "game_input": {
+        "team_a": "San Francisco 49ers",
+        "team_b": "Arizona Cardinals",
+        "current_score": {
+          "team_a": 28,
+          "team_b": 7
+        },
+        "quarter": 2,
+        "time_remaining": "8:30",
+        "recent_events": [
+          "49ers touchdown",
+          "Cardinals fumble",
+          "49ers interception"
+        ]
+      },
+      "market_data": {
+        "event_ticker": "NFL-San Francisco 49ers-Arizona Cardinals-2025-09-15",
+        "team_a_yes_price": 48.0,
+        "team_a_no_price": 52.0,
+        "team_b_yes_price": 52.0,
+        "team_b_no_price": 48.0,
+        "volume_24h": 15000,
+        "bid_ask_spread": 2.0,
+        "last_trade_price": 47.5
+      },
+      "sports_analysis": {
+        "predicted_winner": "team_a",
+        "win_probability_team_a": 0.92,
+        "win_probability_team_b": 0.08,
+        "confidence": 0.95,
+        "key_factors": [
+          "49ers multiple defensive turnovers",
+          "21-point lead early in 2nd quarter",
+          "Cardinals offensive struggles",
+          "Significant momentum swing after fumble+INT sequence"
+        ],
+        "momentum_assessment": "strong_team_a",
+        "reasoning": "The 49ers have established clear dominance in this game with multiple critical factors indicating a likely victory. First, the 28-7 score this early (8:30 in 2nd quarter) shows offensive efficiency, but more importantly, the defensive sequence of forcing a fumble followed by an interception demonstrates the 49ers' defensive control. The Cardinals are showing significant offensive vulnerability with back-to-back turnovers, a particularly concerning trend against the 49ers' already strong defense. The timing of these events (consecutive defensive stops) typically creates compounding negative effects on team morale and offensive rhythm. With substantial time remaining in the 2nd quarter, the 49ers' balanced success on both offense (28 points) and defense (multiple turnovers) suggests they're likely to extend this lead further. The Cardinals would need to score three touchdowns while completely shutting down the 49ers' offense to make this competitive - a highly improbable scenario given the current game flow and demonstrated performance levels. The early timing (2nd quarter) actually works against a comeback as it gives the 49ers more opportunities to exploit their current advantages."
+      },
+      "trading_recommendation": {
+        "action": "BUY",
+        "target": "team_a_yes",
+        "quantity": 750,
+        "confidence": 0.95,
+        "reasoning": "Massive inefficiency detected between sports analysis (92% win prob) and market price ($48 = ~48% implied prob). Multiple strong signals: (1) Early 21-point lead, (2) Defensive dominance with consecutive turnovers, (3) Strong momentum. Market severely mispricing 49ers win probability given game situation. High liquidity allows larger position size. Early game timing typically causes market hesitation, creating opportunity. The consecutive defensive stops particularly suggest compounding advantages not fully priced in.",
+        "sports_signal_strength": 0.92,
+        "market_edge_detected": true,
+        "risk_assessment": "low"
+      },
+      "system_info": {
+        "version": "1.0.0-mvp",
+        "agents_used": [
+          "SportsAgent",
+          "TradeAgent"
+        ],
+        "api_integration": "mock"
+      }
+    }
+  },
+  {
+    "scenario": "Comeback Attempt",
+    "result": {
+      "timestamp": "2025-09-15T22:45:33.331009",
+      "analysis_duration_seconds": 38.57366,
+      "game_input": {
+        "team_a": "Green Bay Packers",
+        "team_b": "Chicago Bears",
+        "current_score": {
+          "team_a": 14,
+          "team_b": 21
+        },
+        "quarter": 4,
+        "time_remaining": "6:45",
+        "recent_events": [
+          "Packers touchdown",
+          "Bears punt",
+          "Packers onside kick recovery"
+        ]
+      },
+      "market_data": {
+        "event_ticker": "NFL-Green Bay Packers-Chicago Bears-2025-09-15",
+        "team_a_yes_price": 48.0,
+        "team_a_no_price": 52.0,
+        "team_b_yes_price": 52.0,
+        "team_b_no_price": 48.0,
+        "volume_24h": 15000,
+        "bid_ask_spread": 2.0,
+        "last_trade_price": 47.5
+      },
+      "sports_analysis": {
+        "predicted_winner": "green_bay_packers",
+        "win_probability_team_a": 0.65,
+        "win_probability_team_b": 0.35,
+        "confidence": 0.75,
+        "key_factors": [
+          "successful_onside_kick_recovery",
+          "momentum_shift_after_touchdown",
+          "late_game_pressure_on_bears_defense",
+          "aaron_rodgers_4th_quarter_excellence",
+          "bears_conservative_play_calling"
+        ],
+        "momentum_assessment": "strong_team_a",
+        "reasoning": "This is a classic momentum shift situation that strongly favors the Packers. Here's why:\n\n1. The sequence of Packers touchdown \u2192 Bears punt \u2192 successful onside kick recovery is a massive momentum swing. Successful onside kicks are rare (around 7% success rate) and create significant psychological advantages.\n\n2. With 6:45 remaining and down by just 7, the Packers have ample time for a methodical drive without rushing. This favors their offensive style and Aaron Rodgers' strength in late-game situations.\n\n3. The Bears' punt followed by losing the onside kick suggests their offense is becoming conservative, a common but often costly late-game strategy when leading.\n\n4. The Packers have scored most recently and now have possession - this combination historically correlates strongly with comeback victories, especially with >5 minutes remaining.\n\n5. The psychological impact on the Bears' defense, having to immediately return to the field after a touchdown and surprising onside kick, typically leads to defensive lapses.\n\nWhile the Bears still lead by 7, the combination of momentum, field position from the onside kick, and time remaining makes this game increasingly favorable for Green Bay. The Packers' historical success in similar situations, particularly with Aaron Rodgers at QB, suggests they're well-positioned to at least tie the game, with a strong probability of taking the lead before time expires."
+      },
+      "trading_recommendation": {
+        "action": "BUY",
+        "target": "team_a_yes",
+        "quantity": 750,
+        "confidence": 0.85,
+        "reasoning": "Significant market inefficiency detected where prices haven't adequately adjusted to major momentum shift. Market implies 48% win probability vs sports analysis of 65%, creating 17% edge. Successful onside kick recovery (7% probability event) combined with Aaron Rodgers' historical late-game performance record creates strong positive expected value. Market structure (tight spreads, good volume) allows for meaningful position size without excessive execution costs. Risk/reward favorable at current prices.",
+        "sports_signal_strength": 0.75,
+        "market_edge_detected": true,
+        "risk_assessment": "medium"
+      },
+      "system_info": {
+        "version": "1.0.0-mvp",
+        "agents_used": [
+          "SportsAgent",
+          "TradeAgent"
+        ],
+        "api_integration": "mock"
+      }
+    }
+  }
+]

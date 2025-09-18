@@ -1,0 +1,113 @@
+# Production Configuration
+environment: production
+
+# Data Paths
+data:
+  raw_path: "/app/data/raw"
+  processed_path: "/app/data/processed"
+  external_path: "/app/data/external"
+  nfl_data_path: "/app/data/raw/nfl"
+  kalshi_data_path: "/app/data/raw/kalshi"
+
+# API Configuration
+api:
+  kalshi:
+    base_url: "https://trading-api.kalshi.com/trade-api/v2"
+    timeout: 30
+    rate_limit: 5  # requests per second (conservative for prod)
+  nfl:
+    base_url: "https://api.nfl.com/v1"
+    timeout: 30
+
+# Data Processing
+processing:
+  batch_size: 5000
+  max_workers: 8
+  chunk_size: 50000
+  time_alignment_tolerance: 30  # seconds
+
+# Model Configuration
+model:
+  hyperparameters:
+    learning_rate: 0.0005
+    batch_size: 64
+    epochs: 200
+    hidden_dims: [512, 256, 128]
+    dropout_rate: 0.3
+
+  reinforcement_learning:
+    algorithm: "PPO"
+    policy_network: "MlpPolicy"
+    gamma: 0.99
+    learning_rate: 0.0001
+    n_steps: 4096
+    batch_size: 128
+    n_epochs: 20
+    clip_range: 0.2
+
+# Feature Engineering
+features:
+  nfl_features:
+    - "down"
+    - "distance"
+    - "field_position"
+    - "score_differential"
+    - "time_remaining"
+    - "play_type"
+    - "formation"
+    - "personnel"
+    - "weather_conditions"
+    - "home_advantage"
+
+  market_features:
+    - "price"
+    - "volume"
+    - "bid_ask_spread"
+    - "price_momentum"
+    - "volatility"
+    - "order_book_depth"
+
+# Logging
+logging:
+  level: INFO
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "/app/logs/nfl_trading.log"
+  max_file_size: 100MB
+  backup_count: 10
+  console_output: false
+
+# Database (Production - PostgreSQL)
+database:
+  type: "postgresql"
+  host: "${DB_HOST}"
+  port: 5432
+  name: "${DB_NAME}"
+  user: "${DB_USER}"
+  password: "${DB_PASSWORD}"
+  echo: false
+  pool_size: 20
+  max_overflow: 30
+
+# Caching (Redis for production)
+cache:
+  type: "redis"
+  host: "${REDIS_HOST}"
+  port: 6379
+  db: 0
+  ttl: 1800  # seconds
+  max_connections: 50
+
+# Security
+security:
+  api_key_env_var: "KALSHI_API_KEY"
+  secret_key_env_var: "KALSHI_SECRET_KEY"
+  ssl_verify: true
+  encryption_key_env_var: "ENCRYPTION_KEY"
+
+# Monitoring
+monitoring:
+  enable_metrics: true
+  metrics_port: 8080
+  health_check_port: 8081
+  prometheus_enabled: true
+  grafana_enabled: true

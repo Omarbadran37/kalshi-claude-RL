@@ -1,0 +1,99 @@
+# Development Configuration
+environment: development
+
+# Data Paths
+data:
+  raw_path: "./data/raw"
+  processed_path: "./data/processed"
+  external_path: "./data/external"
+  nfl_data_path: "./data/raw/nfl"
+  kalshi_data_path: "./data/raw/kalshi"
+
+# API Configuration
+api:
+  kalshi:
+    base_url: "https://trading-api.kalshi.com/trade-api/v2"
+    timeout: 30
+    rate_limit: 10  # requests per second
+  nfl:
+    base_url: "https://api.nfl.com/v1"
+    timeout: 30
+
+# Data Processing
+processing:
+  batch_size: 1000
+  max_workers: 4
+  chunk_size: 10000
+  time_alignment_tolerance: 60  # seconds
+
+# Model Configuration
+model:
+  hyperparameters:
+    learning_rate: 0.001
+    batch_size: 32
+    epochs: 100
+    hidden_dims: [256, 128, 64]
+    dropout_rate: 0.2
+
+  reinforcement_learning:
+    algorithm: "PPO"
+    policy_network: "MlpPolicy"
+    gamma: 0.99
+    learning_rate: 0.0003
+    n_steps: 2048
+    batch_size: 64
+    n_epochs: 10
+    clip_range: 0.2
+
+# Feature Engineering
+features:
+  nfl_features:
+    - "down"
+    - "distance"
+    - "field_position"
+    - "score_differential"
+    - "time_remaining"
+    - "play_type"
+    - "formation"
+    - "personnel"
+
+  market_features:
+    - "price"
+    - "volume"
+    - "bid_ask_spread"
+    - "price_momentum"
+    - "volatility"
+
+# Logging
+logging:
+  level: DEBUG
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "./logs/nfl_trading_dev.log"
+  max_file_size: 10MB
+  backup_count: 5
+  console_output: true
+
+# Database (for development - using SQLite)
+database:
+  type: "sqlite"
+  path: "./data/nfl_trading_dev.db"
+  echo: false
+  pool_size: 5
+  max_overflow: 10
+
+# Caching
+cache:
+  type: "memory"
+  ttl: 3600  # seconds
+  max_size: 1000
+
+# Security
+security:
+  api_key_env_var: "KALSHI_API_KEY"
+  secret_key_env_var: "KALSHI_SECRET_KEY"
+
+# Monitoring
+monitoring:
+  enable_metrics: true
+  metrics_port: 8080
+  health_check_port: 8081

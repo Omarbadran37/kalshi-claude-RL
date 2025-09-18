@@ -1,0 +1,103 @@
+================================================================================
+COMPREHENSIVE STRATEGY PERFORMANCE REPORT
+================================================================================
+Generated: 2025-09-17 12:30:47
+Number of strategies analyzed: 5
+
+STRATEGY RANKINGS (by Sharpe Ratio)
+--------------------------------------------------
+ 2. StatisticalTrader    | Sharpe: -16.827
+ 4. BuyAndHoldTrader     | Sharpe: -27.557
+ 1. RuleBasedTrader      | Sharpe: -28.627
+ 5. MomentumFollower     | Sharpe: -29.211
+ 3. RandomTrader         | Sharpe: -52.960
+
+STRATEGY: RuleBasedTrader
+----------------------------------------
+Total Return:        -2.03%
+Annualized Return: -100.00%
+Volatility:           3.56%
+Sharpe Ratio:       -28.627
+Max Drawdown:         5.28%
+Calmar Ratio:       -18.939
+Win Rate:            17.02%
+Total Trades:          1093
+Profit Factor:         0.36
+Avg Trade P&L:     $  -0.60
+Largest Win:       $  15.51
+Largest Loss:      $ -28.80
+
+STRATEGY: StatisticalTrader
+----------------------------------------
+Total Return:        -0.90%
+Annualized Return:  -98.76%
+Volatility:           5.99%
+Sharpe Ratio:       -16.827
+Max Drawdown:         3.63%
+Calmar Ratio:       -27.229
+Win Rate:            18.70%
+Total Trades:           647
+Profit Factor:         0.59
+Avg Trade P&L:     $  -0.44
+Largest Win:       $  25.37
+Largest Loss:      $ -24.72
+
+STRATEGY: RandomTrader
+----------------------------------------
+Total Return:        -0.51%
+Annualized Return:  -91.83%
+Volatility:           1.77%
+Sharpe Ratio:       -52.960
+Max Drawdown:         1.05%
+Calmar Ratio:       -87.348
+Win Rate:            16.14%
+Total Trades:           285
+Profit Factor:         0.82
+Avg Trade P&L:     $  -0.14
+Largest Win:       $  14.42
+Largest Loss:      $ -34.83
+
+STRATEGY: BuyAndHoldTrader
+----------------------------------------
+Total Return:        -0.07%
+Annualized Return:  -28.37%
+Volatility:           1.10%
+Sharpe Ratio:       -27.557
+Max Drawdown:         0.27%
+Calmar Ratio:      -105.233
+Win Rate:             0.00%
+Total Trades:            12
+Profit Factor:          inf
+Avg Trade P&L:     $   0.00
+Largest Win:       $   0.00
+Largest Loss:      $   0.00
+
+STRATEGY: MomentumFollower
+----------------------------------------
+Total Return:        -2.59%
+Annualized Return: -100.00%
+Volatility:           3.49%
+Sharpe Ratio:       -29.211
+Max Drawdown:         6.47%
+Calmar Ratio:       -15.449
+Win Rate:            10.36%
+Total Trades:          1014
+Profit Factor:         0.40
+Avg Trade P&L:     $  -0.55
+Largest Win:       $  29.15
+Largest Loss:      $ -64.60
+
+STATISTICAL SIGNIFICANCE TESTS
+----------------------------------------
+RuleBasedTrader vs StatisticalTrader | p-value: 0.0610 
+RuleBasedTrader vs RandomTrader    | p-value: 0.0022 ***
+RuleBasedTrader vs BuyAndHoldTrader | p-value: 0.0017 ***
+RuleBasedTrader vs MomentumFollower | p-value: 0.8234 
+StatisticalTrader vs RandomTrader    | p-value: 0.0262 **
+StatisticalTrader vs BuyAndHoldTrader | p-value: 0.0067 ***
+StatisticalTrader vs MomentumFollower | p-value: 0.0829 
+RandomTrader    vs BuyAndHoldTrader | p-value: 0.0162 **
+RandomTrader    vs MomentumFollower | p-value: 0.0070 ***
+BuyAndHoldTrader vs MomentumFollower | p-value: 0.0041 ***
+
+================================================================================

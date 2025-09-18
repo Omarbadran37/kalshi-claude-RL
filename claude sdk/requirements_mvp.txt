@@ -1,0 +1,2 @@
+aiohttp>=3.8.0
+claude-code-sdk>=0.1.0
