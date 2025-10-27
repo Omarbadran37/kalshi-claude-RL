@@ -140,7 +140,7 @@ jobs:
         bandit -r src/ -f json -o bandit-report.json || true
 
     - name: Upload Bandit scan results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v5
       with:
         name: bandit-results
         path: bandit-report.json
@@ -287,7 +287,7 @@ jobs:
         pytest tests/benchmarks/ --benchmark-json=benchmarks.json || true
 
     - name: Upload benchmark results
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v5
       with:
         name: benchmark-results
         path: benchmarks.json
